@@ -1,0 +1,34 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Como ajudar — Rede de Combate ao Câncer</title><link rel="stylesheet" href="styles.css"></head><body><header class="header"><div class="container header-inner"><a href="index.html"><img class="logo" src="logo-ong.png" alt="Rede de Combate ao Câncer"></a><nav class="nav"><a class="" href="index.html">História</a><a class="" href="projetos.html">Projetos</a><a class="active" href="como-ajudar.html">Como ajudar</a><a class="" href="outubro-rosa.html">Outubro Rosa</a><a class="" href="voluntariado.html">Voluntariado</a></nav></div></header><main><section class="page-hero"><div class="container"><div class="eyebrow">Como a Rede ajuda</div><h1>Solidariedade que vira <span>cuidado.</span></h1><p>A Rede atende principalmente pessoas de baixa renda e conta com doações, trabalho voluntário e parceiros para manter suas ações.</p></div></section>
+<section class="section white" id="formas"><div class="container">
+<div class="section-head"><div><div class="eyebrow">Formas de ajudar</div><h2>Como sua ajuda pode <span>chegar</span></h2></div><p>As formas abaixo refletem as necessidades e atividades apresentadas na entrevista.</p></div>
+<div class="help-grid">
+<div class="help-action"><div><h3>Doações</h3><p>Você pode contribuir com leite, fraldas, Gatorade, gelatina, alimentos, roupas, sapatos, cabelo e outros itens necessários aos pacientes.</p></div></div>
+<div class="help-action"><div><h3>Voluntariado</h3><p>O trabalho voluntário participa das ações da Rede e também da produção de massas, doces, tortas, mini pizzas e outros produtos.</p></div></div>
+<div class="help-action"><div><h3>Produtos solidários</h3><p>Comprar produtos feitos pelas voluntárias ajuda a gerar recursos para manter as atividades da instituição.</p></div></div>
+<div class="help-action"><div><h3>Eventos</h3><p>Participar dos eventos ajuda a divulgar a Rede, aproximar a comunidade e fortalecer a arrecadação.</p></div></div>
+</div>
+</div></section><section class="section"><div class="container">
+<div class="section-head"><div><div class="eyebrow">Contribua</div><h2>Faça parte dessa <span>causa.</span></h2></div><p>Existem diferentes maneiras de fortalecer o trabalho da Rede. Em vez de separar cada uma em vários botões, reunimos tudo em um único caminho para facilitar sua participação.</p></div>
+<div class="banner"><div><h2>Quero fazer parte dessa causa</h2><p>Escolha como você quer contribuir: doando itens, ajudando como voluntário, comprando produtos produzidos pelas voluntárias ou participando dos eventos da Rede.</p></div><a class="btn" href="voluntariado.html">Quero fazer parte dessa causa</a></div>
+</div></section>
+<section class="section"><div class="container">
+<div class="section-head"><div><div class="eyebrow">Apoio aos pacientes</div><h2>Para onde a ajuda <span>vai</span></h2></div><p>A Rede atende principalmente pessoas de baixa renda e direciona o apoio para necessidades concretas do dia a dia.</p></div>
+<div class="donation-options"><div class="donation-option"><strong>Alimentação</strong><span>Leite, Gatorade, gelatina e outros alimentos necessários.</span></div><div class="donation-option"><strong>Itens pessoais</strong><span>Fraldas, roupas e sapatos.</span></div><div class="donation-option"><strong>Outras contribuições</strong><span>Cabelo e outras formas de doação que possam apoiar o trabalho da Rede.</span></div></div>
+</div></section>
+</main><footer class="footer"><div class="container footer-inner"><div class="footer-brand"><img src="logo-ong.png" alt="Logo"><div><b>Rede de Combate ao Câncer</b><br><span style="font-size:12px;color:var(--muted)">Força, fé e esperança.</span></div></div><div><h4>Navegação</h4><a href="index.html">História</a><a href="projetos.html">Projetos</a><a href="como-ajudar.html">Como ajudar</a></div><div><h4>Rede</h4><a href="outubro-rosa.html">Outubro Rosa</a><a href="voluntariado.html">Voluntariado</a><p>Santa Cruz do Rio Pardo — SP</p></div></div><div class="container copyright">© 2026 Rede de Combate ao Câncer. Todos os direitos reservados.<a class="instagram-link" href="https://www.instagram.com/rededocancer_scrp/" target="_blank" rel="noopener noreferrer" aria-label="Instagram — Rede do Câncer de Santa Cruz do Rio Pardo"><img class="instagram-icon" src="instagram-logo.png" alt="Instagram"><span>Rede do Câncer de Santa Cruz do Rio Pardo</span></a></div></footer>
+<script>
+(() => {
+  const items = document.querySelectorAll('.section, .page-hero, .card, .product, .help-action, .donation-option, .timeline-box, .stats, .banner, .event');
+  items.forEach(el => el.classList.add('reveal'));
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  items.forEach(el => observer.observe(el));
+})();
+</script>
+</body></html>

@@ -1,0 +1,64 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Voluntariado — Rede de Combate ao Câncer</title><link rel="stylesheet" href="styles.css"></head><body><header class="header"><div class="container header-inner"><a href="index.html"><img class="logo" src="logo-ong.png" alt="Rede de Combate ao Câncer"></a><nav class="nav"><a class="" href="index.html">História</a><a class="" href="projetos.html">Projetos</a><a class="" href="como-ajudar.html">Como ajudar</a><a class="" href="outubro-rosa.html">Outubro Rosa</a><a class="active" href="voluntariado.html">Voluntariado</a></nav></div></header><main>
+<section class="page-hero"><div class="container"><div class="eyebrow">Voluntariado</div><h1>Faça parte da <span>Rede.</span></h1><p>Seu tempo e sua disposição podem ajudar a fortalecer as ações da Rede de Combate ao Câncer.</p></div></section>
+<section class="section"><div class="container volunteer-layout">
+<div class="volunteer-intro"><div class="eyebrow">Inscrição</div><h2>Olá, preencha seus dados para realizar sua <span>inscrição.</span></h2><p>Conte um pouco sobre você para dar o primeiro passo para fazer parte do trabalho voluntário da Rede.</p><div class="volunteer-note"><strong>Por que ser voluntário?</strong><p>As voluntárias ajudam nas ações da Rede e também na produção de massas, doces, tortas, mini pizzas e outros produtos.</p></div></div>
+<form class="volunteer-form" id="volunteerForm" action="#" method="post">
+<h3>Seus dados</h3>
+<label>Nome Completo <b>*</b><input type="text" name="nome" required></label>
+<label>E-mail <b>*</b><input type="email" name="email" required></label>
+<div class="form-row"><label>Data de Nascimento <b>*</b><input type="date" name="nascimento" required></label><label>Celular Principal <b>*</b><input type="tel" name="celular" required></label></div>
+<div class="form-row"><label>Telefone Residencial<input type="tel" name="telefone"></label><fieldset><legend>Gênero <b>*</b></legend><label class="radio"><input type="radio" name="genero" value="masculino" required> Masculino</label><label class="radio"><input type="radio" name="genero" value="feminino"> Feminino</label></fieldset></div>
+<button class="btn primary" type="submit">Próximo</button>
+<div class="volunteer-success" id="volunteerSuccess" aria-live="polite" hidden>
+  <div class="success-icon" aria-hidden="true">✓</div>
+  <h3>Obrigado por querer fazer parte dessa causa! <span>💗</span></h3>
+  <p>Recebemos seus dados e a equipe da Rede entrará em contato.</p>
+  <button class="btn secondary" type="button" id="newVolunteer">Enviar outro cadastro</button>
+</div>
+</form>
+<div class="donation-pix">
+  <div class="eyebrow">Não quer ser voluntário, mas quer ajudar?</div>
+  <h3>Faça a sua <span>doação.</span></h3>
+  <p>Você pode fazer sua doação através do nosso Pix:</p>
+  <div class="pix-key">05.241.760/0001-04</div>
+</div>
+</div></section>
+</main><footer class="footer"><div class="container footer-inner"><div class="footer-brand"><img src="logo-ong.png" alt="Logo"><div><b>Rede de Combate ao Câncer</b><br><span style="font-size:12px;color:var(--muted)">Força, fé e esperança.</span></div></div><div><h4>Navegação</h4><a href="index.html">História</a><a href="projetos.html">Projetos</a><a href="como-ajudar.html">Como ajudar</a></div><div><h4>Rede</h4><a href="outubro-rosa.html">Outubro Rosa</a><a href="voluntariado.html">Voluntariado</a><p>Santa Cruz do Rio Pardo — SP</p></div></div><div class="container copyright">© 2026 Rede de Combate ao Câncer. Todos os direitos reservados.<a class="instagram-link" href="https://www.instagram.com/rededocancer_scrp/" target="_blank" rel="noopener noreferrer" aria-label="Instagram — Rede do Câncer de Santa Cruz do Rio Pardo"><img class="instagram-icon" src="instagram-logo.png" alt="Instagram"><span>Rede do Câncer de Santa Cruz do Rio Pardo</span></a></div></footer>
+<script>
+(() => {
+  const volunteerForm = document.getElementById('volunteerForm');
+  const volunteerSuccess = document.getElementById('volunteerSuccess');
+  const newVolunteer = document.getElementById('newVolunteer');
+
+  if (volunteerForm && volunteerSuccess) {
+    volunteerForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      volunteerForm.classList.add('submitted');
+      volunteerSuccess.hidden = false;
+      volunteerSuccess.classList.add('show');
+      volunteerSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+
+    newVolunteer?.addEventListener('click', () => {
+      volunteerForm.reset();
+      volunteerForm.classList.remove('submitted');
+      volunteerSuccess.hidden = true;
+      volunteerSuccess.classList.remove('show');
+      volunteerForm.querySelector('input')?.focus();
+    });
+  }
+
+  const items = document.querySelectorAll('.section, .page-hero, .card, .product, .help-action, .donation-option, .timeline-box, .stats, .banner, .event');
+  items.forEach(el => el.classList.add('reveal'));
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  items.forEach(el => observer.observe(el));
+})();
+</script>
+</body></html>
